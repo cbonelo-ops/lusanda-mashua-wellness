@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Montserrat:wght@200;300;400&family=Forum&family=Pinyon+Script&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
+  --site-nav-h: 64px;
   /* Brand palette (taken from the live site) */
   --burnt: #a84309;      /* deep burnt orange */
   --terracotta: #dc9750; /* nav bars, logo panel */
@@ -30,7 +31,7 @@
   --signature: 'Mrs Saint Delafield', cursive;
   --display: 'Cormorant Garamond', Georgia, serif;
 
-  --site-nav-h: 48px;
+
   --max: 1366px;
 }
 
@@ -52,20 +53,22 @@ a { color: inherit; }
 .site-nav {
   position: sticky; top: 0; z-index: 50;
   height: var(--site-nav-h);
-  background: #ebeaea;
-  display: flex; align-items: center; justify-content: flex-end;
+  background: var(--burnt);
+  display: flex; align-items: center; justify-content: center;
   padding: 0 24px;
-  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
 }
-.site-nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.site-nav ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 0; }
 .site-nav a {
-  font-family: var(--sans); font-size: 13px; text-decoration: none; color: #3b3b3b;
+  font-family: var(--nav); font-weight: 300; font-size: 16px; letter-spacing: .04em;
+  text-transform: uppercase; text-decoration: none; color: #fff;
+  padding: 6px 0; border-bottom: 1px solid transparent;
 }
-.site-nav a[aria-current="page"] { font-weight: 600; color: #111; }
-.site-nav a:hover { color: var(--burnt); }
+.site-nav a[aria-current="page"] { font-weight: 400; border-bottom-color: #fff; }
+.site-nav a:hover { border-bottom-color: rgba(255,255,255,.7); }
 .nav-toggle {
   display: none; background: none; border: 0; padding: 8px; cursor: pointer;
-  font-size: 22px; line-height: 1; color: #333;
+  font-size: 24px; line-height: 1; color: #fff;
 }
 
 /* ---------- Page-level burnt/terracotta link bar ---------- */
@@ -320,7 +323,8 @@ a { color: inherit; }
    RESPONSIVE
    ========================================================== */
 @media (max-width: 1100px) {
-  .site-nav ul { gap: 18px; }
+  .site-nav ul { gap: 22px; }
+  .site-nav a { font-size: 13px; }
   .link-bar a { font-size: 19px; }
   .about__inner { grid-template-columns: 1fr minmax(0, 720px); }
   .bookings__top { grid-template-columns: 420px 1fr; }
@@ -331,10 +335,11 @@ a { color: inherit; }
   .nav-toggle { display: block; }
   .site-nav ul {
     display: none; position: absolute; top: var(--site-nav-h); left: 0; right: 0;
-    flex-direction: column; gap: 0; background: #ebeaea; padding: 8px 0; box-shadow: 0 8px 16px rgba(0,0,0,.08);
+    flex-direction: column; gap: 0; background: var(--burnt); padding: 8px 0; box-shadow: 0 8px 16px rgba(0,0,0,.08);
   }
   .site-nav.is-open ul { display: flex; }
-  .site-nav li a { display: block; padding: 12px 24px; font-size: 15px; }
+  .site-nav li a { display: block; padding: 14px 24px; font-size: 15px; border-bottom: 0; }
+  .site-nav { justify-content: flex-end; }
 
   .link-bar { padding: 16px; }
   .link-bar a { font-size: 16px; }
