@@ -85,14 +85,36 @@ a { color: inherit; }
 .link-bar--burnt { background: var(--burnt); }
 
 /* ---------- Footer ---------- */
-.site-footer {
-  background: #000; color: #cfc6bf;
-  text-align: center; font-size: 13px; letter-spacing: -.02em;
-  padding: 9px 16px;
+.site-footer { background: var(--burnt); color: #fff; }
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer__inner {
+  max-width: 1180px; margin: 0 auto; padding: 56px 32px 40px;
+  display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 40px; align-items: start;
 }
-.site-footer--burnt { background: var(--burnt); color: #fff; font-size: 16px; padding: 10px 16px; }
-.site-footer a { color: inherit; text-underline-offset: 3px; }
-.site-footer a:hover { color: #fff; }
+.footer-brand { display: flex; flex-direction: column; align-items: center; width: 220px; text-align: center; }
+.footer-brand__mark { position: relative; display: block; width: 120px; aspect-ratio: 685 / 800; }
+.footer-brand__arch, .footer-brand__face { position: absolute; }
+.footer-brand__arch { inset: 0; width: 100%; height: 100%; }
+.footer-brand__face { left: 18%; top: 10%; width: 62%; }
+.footer-brand__name { font-family: var(--roman); font-size: 18px; letter-spacing: .35em; text-transform: uppercase; margin-top: 14px; padding-left: .35em; }
+.footer-brand__tag { font-family: var(--sans); font-size: 12px; letter-spacing: .7em; margin-top: 6px; padding-left: .7em; }
+.footer-col h2 {
+  font-family: var(--nav); font-weight: 400; font-size: 14px; letter-spacing: .2em; text-transform: uppercase;
+  margin: 8px 0 18px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.35);
+}
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.footer-col a { display: inline-flex; align-items: center; gap: 12px; font-size: 16px; opacity: .92; transition: opacity .2s; }
+.footer-col a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+.footer-col svg { width: 20px; height: 20px; flex: none; }
+.site-footer__legal {
+  margin: 0; padding: 14px 16px; text-align: center; font-size: 13px; letter-spacing: -.01em;
+  background: rgba(0,0,0,.18); color: rgba(255,255,255,.85);
+}
+@media (max-width: 860px) {
+  .site-footer__inner { grid-template-columns: 1fr; gap: 32px; padding: 44px 24px 32px; justify-items: center; text-align: center; }
+  .footer-col { width: 100%; max-width: 320px; }
+  .footer-col ul { justify-items: center; }
+}
 
 /* ---------- Buttons ---------- */
 .btn-pill {
