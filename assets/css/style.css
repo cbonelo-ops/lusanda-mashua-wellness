@@ -91,6 +91,8 @@ a { color: inherit; }
   padding: 9px 16px;
 }
 .site-footer--burnt { background: var(--burnt); color: #fff; font-size: 16px; padding: 10px 16px; }
+.site-footer a { color: inherit; text-underline-offset: 3px; }
+.site-footer a:hover { color: #fff; }
 
 /* ---------- Buttons ---------- */
 .btn-pill {
@@ -211,7 +213,7 @@ a { color: inherit; }
 .services__aside .link-bar { position: relative; z-index: 2; margin-right: -46px; border-radius: 0; }
 .services__portrait {
   width: 100%; max-width: 576px; height: 460px; object-fit: cover; object-position: center 58%;
-  border-radius: 0 0 48px 48px; margin-top: -8px;
+  border-radius: 48px;
 }
 .service-grid {
   display: grid; grid-template-columns: repeat(2, minmax(0, 496px)); justify-content: center;
@@ -304,7 +306,7 @@ a { color: inherit; }
 .workshop::before { content: ''; position: absolute; inset: 0; background: rgba(29,29,27,.55); }
 .workshop > * { position: relative; }
 .workshop .link-bar { margin-left: auto; width: 52%; margin-top: 63px; padding: 34px 24px; }
-.workshop__inner { padding: 0 37px 0 51px; }
+.workshop__inner { padding: 70px 37px 0 51px; }
 .workshop h1 {
   font-family: var(--sans); font-weight: 400; color: var(--cream);
   font-size: clamp(40px, 5.2vw, 70.6px); line-height: 1.12; margin: 26px 0 0; word-spacing: .55em;
@@ -355,7 +357,6 @@ a { color: inherit; }
 
   .about__photo { position: relative; left: 0; top: 0; width: 100%; max-height: 520px; object-fit: cover; object-position: center 20%; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent); mask-image: linear-gradient(180deg, #000 60%, transparent); }
   .about__inner { display: block; padding: 0 16px 40px; }
-  .about__inner .link-bar { margin: -60px -16px 0; position: relative; }
   .about__intro { grid-template-columns: 1fr; }
   .signature { font-size: 72px; }
   .about p { font-size: 17px; line-height: 1.6; letter-spacing: -.02em; text-align: left; }
@@ -367,7 +368,7 @@ a { color: inherit; }
   .services__heading { margin: 40px 0 0; }
   .services__aside { padding: 0; }
   .services__aside .link-bar { margin-right: 0; }
-  .services__portrait { max-width: none; border-radius: 0; height: 360px; }
+  .services__portrait { max-width: none; border-radius: 0; height: 360px; margin-top: 32px; }
   .service-grid { grid-template-columns: 1fr; gap: 40px; }
 
   .bookings__top { grid-template-columns: 1fr; padding: 0; }
@@ -403,7 +404,7 @@ a { color: inherit; }
   .leaf--2 { left: auto; right: 6%; bottom: 40px; }
 
   .workshop .link-bar { width: 100%; margin-top: 0; padding: 16px; }
-  .workshop__inner { padding: 0 16px; }
+  .workshop__inner { padding: 40px 16px 0; }
   .workshop h1 { word-spacing: normal; }
   .workshop__copy p { font-size: 18px; }
   .workshop__copy p + p { margin-top: 14px; }
